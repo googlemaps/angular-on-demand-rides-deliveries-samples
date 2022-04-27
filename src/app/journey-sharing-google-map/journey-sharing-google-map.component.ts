@@ -56,6 +56,8 @@ export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
   constructor(private readonly _elementRef: ElementRef) {}
 
   public ngOnInit() {
+    const self = this;
+
     // The HTML Element to place the map in. Gets set to the template element
     // `<div class="map-container"></div>`.
     const mapElement =
@@ -69,7 +71,9 @@ export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
      * @returns An AuthToken containing the token and its expiry time
      */
     async function authTokenFetcher() {
-      const response = await fetch(`${PROVIDER_URL}/token/consumer`);
+      const response = await fetch(
+        `${PROVIDER_URL}/token/consumer/${self.tripId}`
+      );
       const responseJson = await response.json();
 
       return {
