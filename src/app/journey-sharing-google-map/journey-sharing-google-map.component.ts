@@ -78,7 +78,7 @@ export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
         token: responseJson.jwt,
         expiresInSeconds: 3300,
       };
-    }
+    };
 
     const loader = new Loader({
       // Replace with your API key
@@ -170,7 +170,7 @@ export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
       .catch((e) => {
         console.log("failed to load google maps", e);
       });
-  };
+  }
 
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes["tripId"] && this.locationProvider) {
