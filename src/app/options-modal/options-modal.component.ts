@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { JourneySharingUserOptions } from '../shared/journey-sharing-user-options';
-import { ICON_OPTIONS } from '../shared/const';
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { JourneySharingUserOptions } from "../shared/journey-sharing-user-options";
+import { ICON_OPTIONS } from "../shared/const";
 
 @Component({
-  selector: 'app-options-modal',
-  templateUrl: './options-modal.component.html',
-  styleUrls: ['./options-modal.component.css'],
+  selector: "app-options-modal",
+  templateUrl: "./options-modal.component.html",
+  styleUrls: ["./options-modal.component.css"],
 })
 export class OptionsModalComponent implements OnInit {
   @Input() public isVisible = false;

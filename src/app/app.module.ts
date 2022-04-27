@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
-import { JourneySharingGoogleMapComponent } from './journey-sharing-google-map/journey-sharing-google-map.component';
-import { OptionsModalComponent } from './options-modal/options-modal.component';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppRoutingModule } from "./app-routing.module";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { AppComponent } from "./app.component";
+import { JourneySharingGoogleMapComponent } from "./journey-sharing-google-map/journey-sharing-google-map.component";
+import { OptionsModalComponent } from "./options-modal/options-modal.component";
 
 @NgModule({
   declarations: [

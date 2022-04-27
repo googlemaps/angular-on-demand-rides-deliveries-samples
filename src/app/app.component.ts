@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-import { Component, ViewChild } from '@angular/core';
-import { JourneySharingUserOptions } from './shared/journey-sharing-user-options';
-import { JourneySharingGoogleMapComponent } from './journey-sharing-google-map/journey-sharing-google-map.component';
+import { Component, ViewChild } from "@angular/core";
+import { JourneySharingUserOptions } from "./shared/journey-sharing-user-options";
+import { JourneySharingGoogleMapComponent } from "./journey-sharing-google-map/journey-sharing-google-map.component";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
   @ViewChild(JourneySharingGoogleMapComponent)
@@ -33,7 +33,7 @@ export class AppComponent {
 
   // Trip details
   public trip?: google.maps.journeySharing.Trip;
-  public tripId = '';
+  public tripId = "";
   public tripStatus?: string;
   public tripDropoffTime?: Date;
   public tripRemainingStops?: number;
@@ -51,7 +51,7 @@ export class AppComponent {
       this.trip = trip;
 
       // Trip status display string
-      const tripStatus = trip.status?.toLowerCase().replace(/_/g, ' ');
+      const tripStatus = trip.status?.toLowerCase().replace(/_/g, " ");
       this.tripStatus = tripStatus
         ? `${tripStatus.charAt(0).toUpperCase()}${tripStatus.slice(1)}`
         : undefined;

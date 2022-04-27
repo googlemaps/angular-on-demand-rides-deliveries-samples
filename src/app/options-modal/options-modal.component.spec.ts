@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { OptionsModalComponent } from './options-modal.component';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { OptionsModalComponent } from "./options-modal.component";
 
-describe('OptionsModalComponent', () => {
+describe("OptionsModalComponent", () => {
   let component: OptionsModalComponent;
   let fixture: ComponentFixture<OptionsModalComponent>;
 
@@ -33,7 +33,7 @@ describe('OptionsModalComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

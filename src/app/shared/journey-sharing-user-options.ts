@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { ICON_OPTIONS } from './const';
+import { ICON_OPTIONS } from "./const";
 
 /**
  * Options that the user can control. These values are plumbed through to the

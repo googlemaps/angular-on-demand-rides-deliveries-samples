@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { JourneySharingGoogleMapComponent } from './journey-sharing-google-map.component';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { JourneySharingGoogleMapComponent } from "./journey-sharing-google-map.component";
 
-describe('JourneySharingGoogleMapComponent', () => {
+describe("JourneySharingGoogleMapComponent", () => {
   let component: JourneySharingGoogleMapComponent;
   let fixture: ComponentFixture<JourneySharingGoogleMapComponent>;
 
@@ -33,7 +33,7 @@ describe('JourneySharingGoogleMapComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

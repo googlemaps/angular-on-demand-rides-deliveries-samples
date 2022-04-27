@@ -23,20 +23,20 @@ import {
   OnInit,
   Output,
   SimpleChanges,
-} from '@angular/core';
-import { DEFAULT_POLLING_INTERVAL_MS, ICON_OPTIONS } from '../shared/const';
-import { JourneySharingUserOptions } from '../shared/journey-sharing-user-options';
-import { Loader } from '@googlemaps/js-api-loader';
+} from "@angular/core";
+import { DEFAULT_POLLING_INTERVAL_MS, ICON_OPTIONS } from "../shared/const";
+import { JourneySharingUserOptions } from "../shared/journey-sharing-user-options";
+import { Loader } from "@googlemaps/js-api-loader";
 
 // Replace 'YOUR_PROVIDER_URL' with the URL of your provider. See
 // https://github.com/googlemaps/java-on-demand-rides-deliveries-stub-provider
 // for instructions on how to set up a provider.
-const PROVIDER_URL = 'YOUR_PROVIDER_URL';
+const PROVIDER_URL = "YOUR_PROVIDER_URL";
 
 @Component({
-  selector: 'app-journey-sharing-google-map',
-  templateUrl: './journey-sharing-google-map.component.html',
-  styleUrls: ['./journey-sharing-google-map.component.css'],
+  selector: "app-journey-sharing-google-map",
+  templateUrl: "./journey-sharing-google-map.component.html",
+  styleUrls: ["./journey-sharing-google-map.component.css"],
 })
 export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
   @Input() public tripId!: string;
@@ -59,7 +59,7 @@ export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
     // The HTML Element to place the map in. Gets set to the template element
     // `<div class="map-container"></div>`.
     const mapElement =
-      this._elementRef.nativeElement.querySelector('.map-container');
+      this._elementRef.nativeElement.querySelector(".map-container");
 
     /**
      * Returns an authentication token for accessing trip data. See
@@ -80,10 +80,10 @@ export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
 
     const loader = new Loader({
       // Replace with your API key
-      apiKey: 'YOUR_API_KEY',
-      version: 'beta',
+      apiKey: "YOUR_API_KEY",
+      version: "beta",
       // @ts-ignore
-      libraries: ['journeySharing'],
+      libraries: ["journeySharing"],
     });
 
     loader
@@ -92,14 +92,14 @@ export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
         this.locationProvider =
           new google.maps.journeySharing.FleetEngineTripLocationProvider({
             // Replace 'PROVIDER_PROJECT_ID' with your Cloud project ID.
-            projectId: 'PROVIDER_PROJECT_ID',
+            projectId: "PROVIDER_PROJECT_ID",
             authTokenFetcher,
             tripId: this.tripId,
             pollingIntervalMillis: DEFAULT_POLLING_INTERVAL_MS,
           });
 
         this.locationProvider.addListener(
-          'update',
+          "update",
           (
             e: google.maps.journeySharing.FleetEngineTripLocationProviderUpdateEvent
           ) => {
@@ -109,7 +109,7 @@ export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
         );
 
         this.locationProvider.addListener(
-          'error',
+          "error",
           (e: google.maps.ErrorEvent) => {
             this.tripChange.emit(null);
             // Communicate errors to the parent component.
@@ -166,13 +166,13 @@ export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
         }
       })
       .catch((e) => {
-        console.log('failed to load google maps', e);
+        console.log("failed to load google maps", e);
       });
   }
 
   public ngOnChanges(changes: SimpleChanges): void {
-    if (changes['tripId'] && this.locationProvider) {
-      const tripId = changes['tripId'].currentValue;
+    if (changes["tripId"] && this.locationProvider) {
+      const tripId = changes["tripId"].currentValue;
       google.maps.Settings.getInstance().experienceIds = tripId ? [tripId] : [];
       this.locationProvider.tripId = tripId;
     }
