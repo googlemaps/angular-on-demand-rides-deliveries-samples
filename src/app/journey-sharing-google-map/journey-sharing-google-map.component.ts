@@ -56,8 +56,6 @@ export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
   constructor(private readonly _elementRef: ElementRef) {}
 
   public ngOnInit() {
-    const self = this;
-
     // The HTML Element to place the map in. Gets set to the template element
     // `<div class="map-container"></div>`.
     const mapElement =
@@ -70,9 +68,9 @@ export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
      * @param options Contains details about the auth token to be minted.
      * @returns An AuthToken containing the token and its expiry time
      */
-    async function authTokenFetcher() {
+    const authTokenFetcher = async () => {
       const response = await fetch(
-        `${PROVIDER_URL}/token/consumer/${self.tripId}`
+        `${PROVIDER_URL}/token/consumer/${this.tripId}`
       );
       const responseJson = await response.json();
 
@@ -172,7 +170,7 @@ export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
       .catch((e) => {
         console.log("failed to load google maps", e);
       });
-  }
+  };
 
   public ngOnChanges(changes: SimpleChanges): void {
     if (changes["tripId"] && this.locationProvider) {
