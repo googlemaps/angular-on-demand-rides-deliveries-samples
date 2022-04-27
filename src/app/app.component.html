@@ -1,0 +1,99 @@
+<app-options-modal
+  [(isVisible)]="isOptionsModalVisible"
+  [options]="options"
+  (applyOptions)="applyOptions($event)"
+>
+</app-options-modal>
+
+<div class="app-content">
+  <div class="app-heading">
+    <div class="app-title">
+      Angular On-Demand Rides and Deliveries Sample App
+    </div>
+    <div class="button-wrapper">
+      <button (click)="isOptionsModalVisible = true" class="secondary">
+        Options
+      </button>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <input
+      type="text"
+      id="tripId"
+      #tripIdInput
+      placeholder="Trip ID"
+      (keyup.enter)="findTrip(tripIdInput.value)"
+    />
+    <button (click)="findTrip(tripIdInput.value)">Find trip</button>
+  </div>
+
+  <div class="trip-content">
+    <div class="trip-info section">
+      <div class="trip-info-heading">Trip information</div>
+
+      <div class="trip-info-content" *ngIf="trip; else tripInfoMessageBlock">
+        <div class="trip-info-group">
+          <div class="trip-info-label">Trip status</div>
+          <div class="trip-info-value">{{ tripStatus }}</div>
+        </div>
+
+        <div class="trip-info-group">
+          <div class="trip-info-label">
+            {{
+              trip?.status === "COMPLETE"
+                ? "Delivery time"
+                : "Estimated delivery time"
+            }}
+          </div>
+          <div class="trip-info-value">
+            {{ tripDropoffTime | date: "MMM d, y, h:mm a" }}
+          </div>
+        </div>
+
+        <div class="trip-info-group">
+          <div class="trip-info-label"># of remaining stops</div>
+          <div class="trip-info-value">{{ tripRemainingStops | number }}</div>
+        </div>
+
+        <div class="trip-info-group">
+          <div class="trip-info-label">Remaining distance to destination</div>
+          <div class="trip-info-value">
+            {{ tripRemainingDistanceMeters | number }}
+            {{ tripRemainingDistanceMeters !== undefined ? "meters" : "" }}
+          </div>
+        </div>
+
+        <div class="trip-info-group">
+          <div class="trip-info-label">Remaining distance to next stop</div>
+          <div class="trip-info-value">
+            {{ tripNextStopDistanceMeters | number }}
+            {{ tripNextStopDistanceMeters !== undefined ? "meters" : "" }}
+          </div>
+        </div>
+      </div>
+      <ng-template #tripInfoMessageBlock>
+        <div class="trip-info-content">
+          <div
+            class="trip-info-message error"
+            *ngIf="tripError; else tripInfoEmptyBlock"
+          >
+            {{ tripError.message }}
+          </div>
+          <ng-template #tripInfoEmptyBlock>
+            <div class="trip-info-message empty">
+              Enter a trip ID to see trip information.
+            </div>
+          </ng-template>
+        </div>
+      </ng-template>
+    </div>
+    <app-journey-sharing-google-map
+      class="journey-sharing section"
+      [tripId]="tripId"
+      [options]="options"
+      (tripChange)="onTripChange($event)"
+      (tripErrorChange)="onTripError($event)"
+    ></app-journey-sharing-google-map>
+  </div>
+</div>

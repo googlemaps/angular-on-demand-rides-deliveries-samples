@@ -1,0 +1,76 @@
+<div *ngIf="isVisible" class="modal">
+  <div class="modal-content">
+    <form (ngSubmit)="onSubmit()" #optionsForm="ngForm">
+      <div class="modal-title">Options</div>
+
+      <div class="form-group">
+        <input
+          type="checkbox"
+          class="form-control"
+          id="showAnticipatedRoutePolyline"
+          [(ngModel)]="model.showAnticipatedRoutePolyline"
+          name="showAnticipatedRoutePolyline"
+          #showAnticipatedRoutePolyline="ngModel"
+        />
+        <label for="showAnticipatedRoutePolyline" class="right-hand"
+          >Show anticipated route polyline</label
+        >
+      </div>
+      <div class="form-group">
+        <input
+          type="checkbox"
+          class="form-control"
+          id="showTakenRoutePolyline"
+          [(ngModel)]="model.showTakenRoutePolyline"
+          name="showTakenRoutePolyline"
+          #showTakenRoutePolyline="ngModel"
+        />
+        <label for="showTakenRoutePolyline" class="right-hand"
+          >Show taken route polyline</label
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="destinationIcon" class="left-hand">Destination icon</label>
+        <select
+          class="form-control"
+          id="destinationIcon"
+          required
+          [(ngModel)]="model.destinationIcon"
+          name="destinationIcon"
+          #destinationIcon="ngModel"
+        >
+          <option *ngFor="let iconOption of iconOptions" [ngValue]="iconOption">
+            {{ iconOption.displayName }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="vehicleIcon" class="left-hand">Vehicle icon</label>
+        <select
+          class="form-control"
+          id="vehicleIcon"
+          required
+          [(ngModel)]="model.vehicleIcon"
+          name="vehicleIcon"
+          #vehicleIcon="ngModel"
+        >
+          <option *ngFor="let iconOption of iconOptions" [ngValue]="iconOption">
+            {{ iconOption.displayName }}
+          </option>
+        </select>
+      </div>
+
+      <div class="modal-footer">
+        <button class="secondary" (click)="cancel()">Cancel</button>
+        <button
+          type="submit"
+          [disabled]="!optionsForm.dirty || !optionsForm.valid"
+        >
+          Apply options
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

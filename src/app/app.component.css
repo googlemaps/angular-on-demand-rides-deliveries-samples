@@ -1,0 +1,83 @@
+.app-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.app-heading {
+  display: flex;
+  flex-direction: row;
+}
+
+.app-title {
+  margin: 1rem;
+  font-size: xx-large;
+  font-weight: 600;
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+
+.input-container {
+  margin: 1rem;
+}
+
+.input-container input {
+  margin-right: 1rem;
+  width: 20rem;
+}
+
+.trip-content {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+}
+
+.section {
+  margin: 1rem;
+}
+
+.trip-info {
+  width: 30%;
+}
+
+.journey-sharing {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.trip-info-heading {
+  font-size: large;
+  font-weight: 500;
+}
+
+.trip-info-group {
+  margin-top: 1rem;
+}
+
+.trip-info-label {
+  font-size: small;
+  margin-bottom: 0.25rem;
+}
+
+.trip-info-value {
+  font-size: larger;
+  height: 1.25rem;
+}
+
+.trip-info-message {
+  margin-top: 1rem;
+}
+
+.trip-info-message.empty {
+  font-style: italic;
+}
+
+.trip-info-message.error {
+  margin-top: 1rem;
+  color: #f44336;
+}
