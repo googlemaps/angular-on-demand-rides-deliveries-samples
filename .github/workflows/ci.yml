@@ -28,4 +28,6 @@ jobs:
       - run: npm i
       - run: npm run lint
       - run: npm test
+        env:
+          CI: true
       - uses: codecov/codecov-action@v1
