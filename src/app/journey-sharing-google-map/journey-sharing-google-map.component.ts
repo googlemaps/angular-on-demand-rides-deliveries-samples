@@ -98,6 +98,20 @@ export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
             authTokenFetcher,
             tripId: this.tripId,
             pollingIntervalMillis: DEFAULT_POLLING_INTERVAL_MS,
+            destinationMarkerCustomization: (
+                params: google.maps.journeySharing.TripMarkerCustomizationFunctionParams
+            ) => {
+              if (this.options.destinationIcon !== ICON_OPTIONS.USE_DEFAULT) {
+                params.marker.setIcon(this.options.destinationIcon.icon);
+              }
+            },
+            vehicleMarkerCustomization: (
+                params: google.maps.journeySharing.TripMarkerCustomizationFunctionParams
+            ) => {
+              if (this.options.vehicleIcon !== ICON_OPTIONS.USE_DEFAULT) {
+                params.marker.setIcon(this.options.vehicleIcon.icon);
+              }
+            },
           });
 
         this.locationProvider.addListener(
@@ -135,22 +149,6 @@ export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
                   polylineOptions: defaultPolylineOptions,
                   visible: this.options.showTakenRoutePolyline,
                 };
-              },
-              destinationMarkerSetup: ({ defaultMarkerOptions }) => {
-                if (this.options.destinationIcon !== ICON_OPTIONS.USE_DEFAULT) {
-                  defaultMarkerOptions.icon = this.options.destinationIcon.icon;
-                }
-                return { markerOptions: defaultMarkerOptions };
-              },
-              vehicleMarkerSetup: ({ defaultMarkerOptions }) => {
-                if (this.options.vehicleIcon !== ICON_OPTIONS.USE_DEFAULT) {
-                  // Preserve some default icon properties.
-                  defaultMarkerOptions.icon = Object.assign(
-                    defaultMarkerOptions.icon,
-                    this.options.vehicleIcon.icon
-                  );
-                }
-                return { markerOptions: defaultMarkerOptions };
               },
             };
 
