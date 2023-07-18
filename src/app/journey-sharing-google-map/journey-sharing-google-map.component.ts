@@ -99,14 +99,14 @@ export class JourneySharingGoogleMapComponent implements OnChanges, OnInit {
             tripId: this.tripId,
             pollingIntervalMillis: DEFAULT_POLLING_INTERVAL_MS,
             destinationMarkerCustomization: (
-                params: google.maps.journeySharing.TripMarkerCustomizationFunctionParams
+              params: google.maps.journeySharing.TripMarkerCustomizationFunctionParams
             ) => {
               if (this.options.destinationIcon !== ICON_OPTIONS.USE_DEFAULT) {
                 params.marker.setIcon(this.options.destinationIcon.icon);
               }
             },
             vehicleMarkerCustomization: (
-                params: google.maps.journeySharing.TripMarkerCustomizationFunctionParams
+              params: google.maps.journeySharing.TripMarkerCustomizationFunctionParams
             ) => {
               if (this.options.vehicleIcon !== ICON_OPTIONS.USE_DEFAULT) {
                 params.marker.setIcon(this.options.vehicleIcon.icon);
