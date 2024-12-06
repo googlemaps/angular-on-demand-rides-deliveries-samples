@@ -1,9 +1,20 @@
+![Tests/Build Status](https://github.com/googlemaps/angular-on-demand-rides-deliveries-samples/workflows/Test/badge.svg)
+![Release](https://github.com/googlemaps/angular-on-demand-rides-deliveries-samples/workflows/Release/badge.svg)
+![Stable](https://img.shields.io/badge/stability-stable-green)
+
+![GitHub contributors](https://img.shields.io/github/contributors/googlemaps/angular-on-demand-rides-deliveries-samples?color=green)
+[![Discord](https://img.shields.io/discord/676948200904589322?color=6A7EC2&logo=discord&logoColor=ffffff)][Discord server]
+[![GitHub License](https://img.shields.io/github/license/googlemaps/angular-on-demand-rides-deliveries-samples?color=blue)](LICENSE)
+
 # Angular On-Demand Rides and Deliveries Sample
+
+## Description
+
+This repository contains the source code for an Angular sample web app for on-demand rides and deliveries.
 
 ## Architecture
 
-In order to run the full end-to-end **journey sharing** use case, you need 4
-components:
+In order to run the full end-to-end **journey sharing** use case, you need 4 components:
 
 - a [provider backend](https://github.com/googlemaps/java-on-demand-rides-deliveries-stub-provider)
   as it can be utilized by Android, iOS, and JavaScript client samples.
@@ -13,14 +24,16 @@ components:
 
 The consumer and driver mobile apps communicate with the provider backend. The web app also communicates with the provider backend to request authentication tokens. The provider backend communicates with the Fleet Engine.
 
-## Prerequisites
+## Requirements
 
-1. Please fully complete [Getting Started with Fleet Engine](https://developers.google.com/maps/documentation/transportation-logistics/on-demand-rides-deliveries-solution/trip-order-progress/fleet-engine).
-1. Please make sure the [provider backend](https://github.com/googlemaps/java-on-demand-rides-deliveries-stub-provider)
+1. Fully complete the Prerequisites section of [Getting Started with Fleet Engine](https://developers.google.com/maps/documentation/transportation-logistics/on-demand-rides-deliveries-solution/trip-order-progress/fleet-engine).
+1. Make sure the [provider backend](https://github.com/googlemaps/java-on-demand-rides-deliveries-stub-provider)
    is up and running.
-1. Please make sure a consumer mobile app and a driver mobile app are running. Use these to create vehicles and trips to track with the Angular sample app.
+1. Make sure a consumer mobile app and a driver mobile app are running. Use these to create vehicles and trips to track with the Angular sample app.
+1. Get an API key for the Maps SDK for Android by following
+   [Using API Keys](https://developers.google.com/maps/documentation/android-sdk/get-api-key).
 
-## Getting started
+## Usage
 
 ### Step 1 - Download and install dependencies
 
@@ -82,7 +95,43 @@ From this directory, run `ng serve` to start a development server. Navigate to `
 
 Enter a trip ID for a trip you created (Prerequisite #3) in the Trip ID input field and click "Find trip".
 
-## Important references
+## Documentation
 
 - [Installing Cloud SDK](https://cloud.google.com/sdk/docs/install)
 - [Transportation SDKs - JavaScript SDK Setup](https://developers.google.com/maps/documentation/transportation-logistics/on-demand-rides-deliveries-solution/trip-order-progress/consumer-sdk/consumer_sdk_quickstart_javascript)
+
+## Contributing
+
+Contributions are welcome and encouraged! If you'd like to contribute, send us a [pull request] and refer to our [code of conduct] and [contributing guide].
+
+## Terms of Service
+
+This library uses Google Maps Platform services. Use of Google Maps Platform services through this library is subject to the Google Maps Platform [Terms of Service].
+
+This library is not a Google Maps Platform Core Service. Therefore, the Google Maps Platform Terms of Service (e.g. Technical Support Services, Service Level Agreements, and Deprecation Policy) do not apply to the code in this library.
+
+## Support
+
+This library is offered via an open source [license](LICENSE). It is not governed by the Google Maps Platform Support [Technical Support Services Guidelines](https://cloud.google.com/maps-platform/terms/tssg), the [SLA](https://cloud.google.com/maps-platform/terms/sla), or the [Deprecation Policy](https://cloud.google.com/maps-platform/terms) (however, any Google Maps Platform services used by the library remain subject to the Google Maps Platform Terms of Service).
+
+This library adheres to [semantic versioning] to indicate when backwards-incompatible changes are introduced. Accordingly, while the library is in version 0.x, backwards-incompatible changes may be introduced at any time.
+
+If you find a bug, or have a feature request, please [file an issue] on GitHub. If you would like to get answers to technical questions from other Google Maps Platform developers, ask through one of our [developer community channels]. If you'd like to contribute, please check the [contributing guide].
+
+You can also discuss this library on our [Discord server].
+
+[api-key]: https://developers.google.com/maps/documentation/android-sdk/get-api-key
+[devsite-guide]: https://developers.google.com/maps/documentation/android-sdk/utility
+[gmp-start]: https://console.cloud.google.com/google/maps-apis/start
+[maps-sdk]: https://developers.google.com/maps/documentation/android-sdk
+[documentation]: https://googlemaps.github.io/angular-on-demand-rides-deliveries-samples
+
+[code of conduct]: CODE_OF_CONDUCT.md
+[contributing guide]: CONTRIBUTING.md
+[developer community channels]: https://developers.google.com/maps/developer-community
+[Discord server]: https://discord.gg/jRteCzP
+[file an issue]: https://github.com/googlemaps/angular-on-demand-rides-deliveries-samples/issues/new/choose
+[pull request]: https://github.com/googlemaps/angular-on-demand-rides-deliveries-samples/compare
+[semantic versioning]: https://semver.org
+[similar inquiry]: https://github.com/googlemaps/angular-on-demand-rides-deliveries-samples/issues
+[Terms of Service]: https://cloud.google.com/maps-platform/terms
