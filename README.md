@@ -1,10 +1,9 @@
 ![Tests/Build Status](https://github.com/googlemaps/angular-on-demand-rides-deliveries-samples/workflows/Test/badge.svg)
 ![Release](https://github.com/googlemaps/angular-on-demand-rides-deliveries-samples/workflows/Release/badge.svg)
-![Stable](https://img.shields.io/badge/stability-stable-green)
 
 ![GitHub contributors](https://img.shields.io/github/contributors/googlemaps/angular-on-demand-rides-deliveries-samples?color=green)
 [![Discord](https://img.shields.io/discord/676948200904589322?color=6A7EC2&logo=discord&logoColor=ffffff)][Discord server]
-[![GitHub License](https://img.shields.io/github/license/googlemaps/angular-on-demand-rides-deliveries-samples?color=blue)](LICENSE)
+[![GitHub License](https://img.shields.io/github/license/googlemaps/angular-on-demand-rides-deliveries-samples?color=blue)][license]
 
 # Angular On-Demand Rides and Deliveries Sample
 
@@ -12,26 +11,32 @@
 
 This repository contains the source code for an Angular sample web app for on-demand rides and deliveries.
 
+## Requirements
+
+* [Sign up with Google Maps Platform]
+* A Google Maps Platform [project] with the **Fleet Engine APIs** enabled
+* An [API key] associated with the project above
+* Node.js & NPM
+* Angular framework
+
 ## Architecture
 
 In order to run the full end-to-end **journey sharing** use case, you need 4 components:
 
-- a [provider backend](https://github.com/googlemaps/java-on-demand-rides-deliveries-stub-provider)
+- [Provider backend](https://github.com/googlemaps/java-on-demand-rides-deliveries-stub-provider)
   as it can be utilized by Android, iOS, and JavaScript client samples.
-- a driver app ([Android](https://github.com/googlemaps/android-on-demand-rides-deliveries-samples/) | [iOS](https://github.com/googlemaps/ios-on-demand-rides-deliveries-samples/))
-- a consumer app ([Android](https://github.com/googlemaps/android-on-demand-rides-deliveries-samples/) | [iOS](https://github.com/googlemaps/ios-on-demand-rides-deliveries-samples/))
-- a web app (included in this repository)
+- Driver app ([Android](https://github.com/googlemaps/android-on-demand-rides-deliveries-samples/) | [iOS](https://github.com/googlemaps/ios-on-demand-rides-deliveries-samples/))
+- Consumer app ([Android](https://github.com/googlemaps/android-on-demand-rides-deliveries-samples/) | [iOS](https://github.com/googlemaps/ios-on-demand-rides-deliveries-samples/))
+- Web app (included in this repository)
 
 The consumer and driver mobile apps communicate with the provider backend. The web app also communicates with the provider backend to request authentication tokens. The provider backend communicates with the Fleet Engine.
 
-## Requirements
+## Usage
 
 1. Fully complete the Prerequisites section of [Getting Started with Fleet Engine](https://developers.google.com/maps/documentation/transportation-logistics/on-demand-rides-deliveries-solution/trip-order-progress/fleet-engine).
 1. Make sure the [provider backend](https://github.com/googlemaps/java-on-demand-rides-deliveries-stub-provider)
    is up and running.
 1. Make sure a consumer mobile app and a driver mobile app are running. Use these to create vehicles and trips to track with the Angular sample app.
-1. Get an API key for the Maps SDK for Android by following
-   [Using API Keys](https://developers.google.com/maps/documentation/android-sdk/get-api-key).
 
 ## Usage
 
@@ -112,7 +117,7 @@ This library is not a Google Maps Platform Core Service. Therefore, the Google M
 
 ## Support
 
-This library is offered via an open source [license](LICENSE). It is not governed by the Google Maps Platform Support [Technical Support Services Guidelines](https://cloud.google.com/maps-platform/terms/tssg), the [SLA](https://cloud.google.com/maps-platform/terms/sla), or the [Deprecation Policy](https://cloud.google.com/maps-platform/terms) (however, any Google Maps Platform services used by the library remain subject to the Google Maps Platform Terms of Service).
+This library is offered via an open source [license]. It is not governed by the Google Maps Platform Support [Technical Support Services Guidelines, the SLA, or the [Deprecation Policy]. However, any Google Maps Platform services used by the library remain subject to the Google Maps Platform Terms of Service.
 
 This library adheres to [semantic versioning] to indicate when backwards-incompatible changes are introduced. Accordingly, while the library is in version 0.x, backwards-incompatible changes may be introduced at any time.
 
@@ -120,18 +125,22 @@ If you find a bug, or have a feature request, please [file an issue] on GitHub. 
 
 You can also discuss this library on our [Discord server].
 
-[api-key]: https://developers.google.com/maps/documentation/android-sdk/get-api-key
-[devsite-guide]: https://developers.google.com/maps/documentation/android-sdk/utility
-[gmp-start]: https://console.cloud.google.com/google/maps-apis/start
-[maps-sdk]: https://developers.google.com/maps/documentation/android-sdk
+[API key]: https://developers.google.com/maps/documentation/javascript/get-api-key
+[maps-sdk]: https://developers.google.com/maps/documentation/mobility
 [documentation]: https://googlemaps.github.io/angular-on-demand-rides-deliveries-samples
 
 [code of conduct]: CODE_OF_CONDUCT.md
 [contributing guide]: CONTRIBUTING.md
+[Deprecation Policy]: https://cloud.google.com/maps-platform/terms
 [developer community channels]: https://developers.google.com/maps/developer-community
 [Discord server]: https://discord.gg/jRteCzP
 [file an issue]: https://github.com/googlemaps/angular-on-demand-rides-deliveries-samples/issues/new/choose
+[license]: LICENSE
+[project]: https://developers.google.com/maps/documentation/mobility/fleet-engine/essentials/set-up-fleet/create-project
 [pull request]: https://github.com/googlemaps/angular-on-demand-rides-deliveries-samples/compare
 [semantic versioning]: https://semver.org
+[Sign up with Google Maps Platform]: https://console.cloud.google.com/google/maps-apis/start
 [similar inquiry]: https://github.com/googlemaps/angular-on-demand-rides-deliveries-samples/issues
+[SLA]: https://cloud.google.com/maps-platform/terms/sla
+[Technical Support Services Guidelines]: https://cloud.google.com/maps-platform/terms/tssg
 [Terms of Service]: https://cloud.google.com/maps-platform/terms
