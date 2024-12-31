@@ -1,9 +1,10 @@
-![Tests/Build Status](https://github.com/googlemaps/angular-on-demand-rides-deliveries-samples/workflows/Test/badge.svg)
 ![Release](https://github.com/googlemaps/angular-on-demand-rides-deliveries-samples/workflows/Release/badge.svg)
+[![Tests/Build](https://github.com/googlemaps/angular-on-demand-rides-deliveries-samples/actions/workflows/test.yml/badge.svg)](https://github.com/googlemaps/angular-on-demand-rides-deliveries-samples/actions/workflows/test.yml)
 
-![GitHub contributors](https://img.shields.io/github/contributors/googlemaps/angular-on-demand-rides-deliveries-samples?color=green)
+![Contributors](https://img.shields.io/github/contributors/googlemaps/angular-on-demand-rides-deliveries-samples?color=green)
+[![License](https://img.shields.io/github/license/googlemaps/angular-on-demand-rides-deliveries-samples?color=blue)][license]
+[![StackOverflow](https://img.shields.io/stackexchange/stackoverflow/t/google-maps?color=orange&label=google-maps&logo=stackoverflow)](https://stackoverflow.com/questions/tagged/google-maps)
 [![Discord](https://img.shields.io/discord/676948200904589322?color=6A7EC2&logo=discord&logoColor=ffffff)][Discord server]
-[![GitHub License](https://img.shields.io/github/license/googlemaps/angular-on-demand-rides-deliveries-samples?color=blue)][license]
 
 # Angular On-Demand Rides and Deliveries Sample
 
@@ -13,11 +14,11 @@ This repository contains the source code for an Angular sample web app for on-de
 
 ## Requirements
 
-* [Sign up with Google Maps Platform]
-* A Google Maps Platform [project] with the **Fleet Engine APIs** enabled
-* An [API key] associated with the project above
-* Node.js & NPM
-* Angular framework
+- [Sign up with Google Maps Platform]
+- A Google Maps Platform [project] with the **Fleet Engine APIs** enabled
+- An [API key] associated with the project above
+- Node.js & NPM
+- Angular framework
 
 ## Architecture
 
@@ -129,7 +130,7 @@ You can also discuss this library on our [Discord server].
 [maps-sdk]: https://developers.google.com/maps/documentation/mobility
 [documentation]: https://googlemaps.github.io/angular-on-demand-rides-deliveries-samples
 
-[code of conduct]: CODE_OF_CONDUCT.md
+[code of conduct]: ?tab=coc-ov-file#readme
 [contributing guide]: CONTRIBUTING.md
 [Deprecation Policy]: https://cloud.google.com/maps-platform/terms
 [developer community channels]: https://developers.google.com/maps/developer-community
